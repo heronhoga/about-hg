@@ -627,7 +627,7 @@ function App() {
         <h4 className="text-xl sm:text-3xl md:text-5xl block mb-6 text-center mt-8">
         Some of my featured projects
         </h4>
-        <Carousel className="block w-3/5" showStatus={false} showThumbs={false}>
+        <Carousel className="block w-3/5" showStatus={false} showThumbs={false} swipeable={true} emulateTouch={true} autoPlay={true} infiniteLoop={true} interval={5000}>
           <div>
             <img src="../project-images/sewain.jpeg" />
             <p className="legend">SEWAIN - Rental Web App</p>
@@ -635,6 +635,10 @@ function App() {
           <div>
             <img src="../project-images/woai.jpeg" />
             <p className="legend">WOAI - Sports AI Assistant App</p>
+          </div>    
+                <div>
+            <img src="../project-images/hijaiyah.jpeg" />
+            <p className="legend">Hijaiyah - AI Integrated Mobile App to learn Hijaiyah</p>
           </div>
         </Carousel>
 
