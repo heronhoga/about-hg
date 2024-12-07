@@ -1,5 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import Typewriter from "typewriter-effect";
+import ReactDOM from "react-dom";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
 function App() {
   return (
@@ -608,7 +611,7 @@ function App() {
 
         <div
           id="typewriter"
-          className="text-center text-lg sm:text-3xl md:text-5xl"
+          className="text-center text-lg sm:text-3xl md:text-5xl mt-5 sm:mt-7 md:mt-9"
         >
           <Typewriter
             options={{
@@ -618,6 +621,24 @@ function App() {
             }}
           />
         </div>
+      </div>
+
+      <div className="flex flex-col items-center justify-center min-h-screen text-gray-800 bg-white">
+        <h4 className="text-xl sm:text-3xl md:text-5xl block mb-6 text-center mt-8">
+        Some of my featured projects
+        </h4>
+        <Carousel className="block w-3/5" showStatus={false} showThumbs={false}>
+          <div>
+            <img src="../project-images/sewain.jpeg" />
+            <p className="legend">SEWAIN - Rental Web App</p>
+          </div>
+          <div>
+            <img src="../project-images/woai.jpeg" />
+            <p className="legend">WOAI - Sports AI Assistant App</p>
+          </div>
+        </Carousel>
+
+        <a href="https://github.com/heronhoga" target="_blank" className="text-center text-md sm:text-l md:text-xl underline my-8">visit my GitHub (please please please..)</a>
       </div>
     </div>
   );
