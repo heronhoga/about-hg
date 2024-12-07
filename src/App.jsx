@@ -120,6 +120,7 @@ function App() {
           />
         </div>
 
+        <hr className="my-5 sm:my-7 md:my-9 border border-white w-full" />
         <div
           id="tech-list"
           className="text-center flex flex-row space-x-2 sm:space-x-4 bg-white rounded-[100px] p-2 sm:p-5 mx-16"
@@ -450,7 +451,7 @@ function App() {
 
         <div
           id="tech-list-3"
-          className="text-center flex flex-row space-x-2 sm:space-x-4 bg-white rounded-[100px] p-2 sm:p-5 mx-16" 
+          className="text-center flex flex-row space-x-2 sm:space-x-4 bg-white rounded-[100px] p-2 sm:p-5 mx-16"
         >
           <a href="https://nodered.org/" target="_blank">
             <svg
@@ -601,6 +602,21 @@ function App() {
               </g>
             </svg>
           </a>
+        </div>
+
+        <hr className="my-5 sm:my-7 md:my-9 border border-white w-full" />
+
+        <div
+          id="typewriter"
+          className="text-center text-lg sm:text-3xl md:text-5xl"
+        >
+          <Typewriter
+            options={{
+              strings: ["And many more.."],
+              autoStart: true,
+              loop: true,
+            }}
+          />
         </div>
       </div>
     </div>
