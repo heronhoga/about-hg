@@ -3,41 +3,43 @@ import Typewriter from "typewriter-effect";
 import ReactDOM from "react-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
 
 function App() {
   AOS.init();
   return (
     <div>
       {/* hg-text */}
-      <div  className="flex items-center justify-center min-h-screen bg-gray-800">
+      <div className="flex items-center justify-center h-screen bg-gray-800">
         <div
           id="hoga-text"
-          className="text-center text-lg sm:text-3xl md:text-5xl"
+          className="text-center text-lg sm:text-xl md:text-5xl"
           data-aos="fade-up"
         >
           <div
             id="text-border"
-            className="border border-white p-2 rounded-md mx-2"
+            className="border border-white p-2 rounded-md mx-4"
           >
-            <Typewriter
-              options={{
-                strings: [
-                  "Hi! I am Hoga",
-                  "I am a tech enthusiast!",
-                  "I like to code!",
-                ],
-                autoStart: true,
-                loop: true,
-              }}
-            />
+            <div className="h-24 md:h-32 flex items-center justify-center text-white">
+              <Typewriter
+                options={{
+                  strings: [
+                    "Hi! I am Hoga",
+                    "I am a tech enthusiast!",
+                    "I like to code!",
+                  ],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
 
       {/* about me */}
-      <div className="flex items-center justify-center min-h-screen bg-white text-gray-800">
+      <div className="flex items-center justify-center h-screen bg-white text-gray-800">
         <div
           id="text-border"
           className="border border-gray-800 p-5 rounded-md mx-6 sm:mx-20 md:mx-40 shadow-lg"
@@ -115,9 +117,10 @@ function App() {
 
       {/* tech list */}
       <div className="flex items-center justify-center min-h-screen bg-gray-800 text-white flex-col">
+      <div className="h-24 md:h-32 flex items-center justify-center text-white">
         <div
           id="typewriter"
-          className="text-center text-lg sm:text-3xl md:text-5xl mb-8"
+          className="text-center text-lg sm:text-3xl md:text-5xl my-8"
         >
           <Typewriter
             options={{
@@ -126,6 +129,7 @@ function App() {
               loop: true,
             }}
           />
+        </div>
         </div>
 
         <hr className="my-5 sm:my-7 md:my-9 border border-white w-full" />
@@ -619,7 +623,7 @@ function App() {
 
         <div
           id="typewriter"
-          className="text-center text-lg sm:text-3xl md:text-5xl mt-5 sm:mt-7 md:mt-9"
+          className="text-center text-lg sm:text-3xl md:text-5xl my-5 sm:my-7 md:my-9"
         >
           <Typewriter
             options={{
@@ -671,17 +675,23 @@ function App() {
       </div>
 
       <div className="flex items-center justify-center min-h-screen bg-gray-800 text-white flex-col">
-        <h4 className="text-xl sm:text-3xl md:text-5xl text-center" data-aos="flip-down">
+        <h4
+          className="text-xl sm:text-3xl md:text-5xl text-center"
+          data-aos="flip-down"
+        >
           Contact me by email
         </h4>
-        <a href="mailto:afrinata34@gmail.com" className="mt-4 sm:mt-6 md:mt-8" data-aos="flip-down">
+        <a
+          href="mailto:afrinata34@gmail.com"
+          className="mt-4 sm:mt-6 md:mt-8"
+          data-aos="flip-down"
+        >
           <svg
             stroke="currentColor"
             fill="currentColor"
             stroke-width="0"
             role="img"
             viewBox="0 0 24 24"
-
             className="w-10 sm:w-16 md:w-20"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -689,13 +699,22 @@ function App() {
             <path d="M24 4.5v15c0 .85-.65 1.5-1.5 1.5H21V7.387l-9 6.463-9-6.463V21H1.5C.649 21 0 20.35 0 19.5v-15c0-.425.162-.8.431-1.068C.7 3.16 1.076 3 1.5 3H2l10 7.25L22 3h.5c.425 0 .8.162 1.069.432.27.268.431.643.431 1.068z"></path>
           </svg>
         </a>
+        <p className="mt-4 sm:mt-6 md:mt-8 text-sm sm:text-md md:text-lg">afrinata34@gmail.com</p>
       </div>
 
       <div className="flex items-center justify-center min-h-screen bg-white text-gray-800 flex-col">
-      <h4 className="text-xl sm:text-3xl md:text-5xl text-center" data-aos="zoom-in">
+        <h4
+          className="text-xl sm:text-3xl md:text-5xl text-center"
+          data-aos="zoom-in"
+        >
           Made with love and hate by hg
         </h4>
-        <p className="mt-2 sm:mt-4 md:mt-6 text-sm sm:text-md md:text-lg" data-aos="zoom-in">*i actually hate front-end dev</p>
+        <p
+          className="mt-2  md:mt-6 text-sm sm:text-md md:text-lg"
+          data-aos="zoom-in"
+        >
+          *I'm not one to categorize myself; I'm just a computer lover, eager to learn anything about computers.
+        </p>
       </div>
     </div>
   );
