@@ -1,12 +1,19 @@
 import React, { Component } from "react";
 import Typewriter from "typewriter-effect";
-import ReactDOM from "react-dom";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
 import AOS from "aos";
-import "aos/dist/aos.css"; // You can also use <link> for styles
+import "aos/dist/aos.css";
+import Carousel from "./components/carousel";
+
 
 function App() {
+  let slides = [
+    "/project-images/hijaiyah.jpeg",
+    "/project-images/sewain.jpeg",
+    "/project-images/woai.jpeg",
+    "/project-images/ebii.png",
+    "project-images/hexa.png",
+  ];
+
   AOS.init();
   return (
     <div>
@@ -116,20 +123,20 @@ function App() {
       </div>
 
       {/* tech list */}
-      <div className="flex items-center justify-center min-h-screen bg-gray-800 text-white flex-col">
-      <div className="h-24 md:h-32 flex items-center justify-center text-white">
-        <div
-          id="typewriter"
-          className="text-center text-lg sm:text-3xl md:text-5xl my-8"
-        >
-          <Typewriter
-            options={{
-              strings: ["I've been learning about.."],
-              autoStart: true,
-              loop: true,
-            }}
-          />
-        </div>
+      <div className="flex items-center justify-center h-screen bg-gray-800 text-white flex-col">
+        <div className="h-24 md:h-32 flex items-center justify-center text-white">
+          <div
+            id="typewriter"
+            className="text-center text-lg sm:text-3xl md:text-5xl"
+          >
+            <Typewriter
+              options={{
+                strings: ["I've been learning about.."],
+                autoStart: true,
+                loop: true,
+              }}
+            />
+          </div>
         </div>
 
         <hr className="my-5 sm:my-7 md:my-9 border border-white w-full" />
@@ -253,11 +260,9 @@ function App() {
           </a>
         </div>
 
-        <hr className="my-1 sm:my-2 md:my-3 border border-white" />
-
         <div
           id="tech-list-2"
-          className="text-center flex flex-row space-x-2 sm:space-x-4 bg-white rounded-[100px] p-2 sm:p-5 mx-16"
+          className="text-center flex flex-row space-x-2 sm:space-x-4 bg-white rounded-[100px] p-2 sm:p-5 mx-16 my-4"
           data-aos="zoom-in"
         >
           <a href="" target="_blank">
@@ -461,8 +466,6 @@ function App() {
           </a>
         </div>
 
-        <hr className="my-1 sm:my-2 md:my-3 border border-white" />
-
         <div
           id="tech-list-3"
           className="text-center flex flex-row space-x-2 sm:space-x-4 bg-white rounded-[100px] p-2 sm:p-5 mx-16"
@@ -620,18 +623,19 @@ function App() {
         </div>
 
         <hr className="my-5 sm:my-7 md:my-9 border border-white w-full" />
-
-        <div
-          id="typewriter"
-          className="text-center text-lg sm:text-3xl md:text-5xl my-5 sm:my-7 md:my-9"
-        >
-          <Typewriter
-            options={{
-              strings: ["And many more.."],
-              autoStart: true,
-              loop: true,
-            }}
-          />
+        <div className="h-24 md:h-32 flex items-center justify-center text-white">
+          <div
+            id="typewriter"
+            className="text-center text-lg sm:text-3xl md:text-5xl my-5 sm:my-7 md:my-9"
+          >
+            <Typewriter
+              options={{
+                strings: ["And many more.."],
+                autoStart: true,
+                loop: true,
+              }}
+            />
+          </div>
         </div>
       </div>
 
@@ -639,31 +643,11 @@ function App() {
         <h4 className="text-xl sm:text-3xl md:text-5xl block mb-6 text-center mt-8">
           Some of my featured projects
         </h4>
-        <Carousel
-          className="block w-3/5"
-          showStatus={false}
-          showThumbs={false}
-          swipeable={true}
-          emulateTouch={true}
-          autoPlay={true}
-          infiniteLoop={true}
-          interval={5000}
-        >
-          <div>
-            <img src="../project-images/sewain.jpeg" />
-            <p className="legend">SEWAIN - Rental Web App</p>
-          </div>
-          <div>
-            <img src="../project-images/woai.jpeg" />
-            <p className="legend">WOAI - Sports AI Assistant App</p>
-          </div>
-          <div>
-            <img src="../project-images/hijaiyah.jpeg" />
-            <p className="legend">
-              Hijaiyah - AI Integrated Mobile App to learn Hijaiyah
-            </p>
-          </div>
-        </Carousel>
+        {/* carousel slides */}
+        <div className="w-[80%] m-auto">
+          <Carousel slides={slides} />
+        </div>
+        {/* carousel's buttons */}
 
         <a
           href="https://github.com/heronhoga"
@@ -699,7 +683,9 @@ function App() {
             <path d="M24 4.5v15c0 .85-.65 1.5-1.5 1.5H21V7.387l-9 6.463-9-6.463V21H1.5C.649 21 0 20.35 0 19.5v-15c0-.425.162-.8.431-1.068C.7 3.16 1.076 3 1.5 3H2l10 7.25L22 3h.5c.425 0 .8.162 1.069.432.27.268.431.643.431 1.068z"></path>
           </svg>
         </a>
-        <p className="mt-4 sm:mt-6 md:mt-8 text-sm sm:text-md md:text-lg">afrinata34@gmail.com</p>
+        <p className="mt-4 sm:mt-6 md:mt-8 text-sm sm:text-md md:text-lg">
+          afrinata34@gmail.com
+        </p>
       </div>
 
       <div className="flex items-center justify-center min-h-screen bg-white text-gray-800 flex-col">
@@ -707,13 +693,14 @@ function App() {
           className="text-xl sm:text-3xl md:text-5xl text-center"
           data-aos="zoom-in"
         >
-          Made with love and hate by hg
+          Made with love by hg
         </h4>
         <p
-          className="mt-2  md:mt-6 text-sm sm:text-md md:text-lg"
+          className="mt-2 md:mt-6 text-sm sm:text-md md:text-lg text-center px-5"
           data-aos="zoom-in"
         >
-          *I'm not one to categorize myself; I'm just a computer lover, eager to learn anything about computers.
+          *I'm not one to categorize myself; I'm just a computer lover, eager to
+          learn anything about computers.
         </p>
       </div>
     </div>
