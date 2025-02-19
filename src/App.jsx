@@ -4,7 +4,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Carousel from "./components/carousel";
 
-
 function App() {
   let slides = [
     "/project-images/hijaiyah.jpeg",
@@ -123,7 +122,10 @@ function App() {
       </div>
 
       {/* tech list */}
-      <div className="flex items-center justify-center h-screen bg-gray-800 text-white flex-col">
+      <div
+        className="flex items-center justify-center min-h-screen
+       bg-gray-800 text-white flex-col"
+      >
         <div className="h-24 md:h-32 flex items-center justify-center text-white">
           <div
             id="typewriter"
@@ -644,7 +646,7 @@ function App() {
           Some of my featured projects
         </h4>
         {/* carousel slides */}
-        <div className="w-[80%] m-auto">
+        <div className="w-[60%] m-auto">
           <Carousel slides={slides} />
         </div>
         {/* carousel's buttons */}
