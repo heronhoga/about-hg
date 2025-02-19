@@ -6,11 +6,27 @@ import Carousel from "./components/carousel";
 
 function App() {
   let slides = [
-    "/project-images/hijaiyah.jpeg",
-    "/project-images/sewain.jpeg",
-    "/project-images/woai.jpeg",
-    "/project-images/ebii.png",
-    "project-images/hexa.png",
+    {
+      url: "/project-images/hijaiyah.jpeg",
+      description:
+        "Computer Vision-Assisted Arabic Letter Learning Mobile Application",
+    },
+    {
+      url: "/project-images/sewain.jpeg",
+      description: "Academic Equipment Rental Web Application",
+    },
+    {
+      url: "/project-images/woai.jpeg",
+      description: "AI-Assisted Workout Mobile Application",
+    },
+    {
+      url: "/project-images/ebii.png",
+      description: "IoT Device Monitoring Web Application",
+    },
+    {
+      url: "project-images/hexa.png",
+      description: "Transportation Management System Web Application",
+    },
   ];
 
   AOS.init();
@@ -646,7 +662,7 @@ function App() {
           Some of my featured projects
         </h4>
         {/* carousel slides */}
-        <div className="w-[60%] m-auto">
+        <div className="w-[80%] m-auto">
           <Carousel slides={slides} />
         </div>
         {/* carousel's buttons */}
