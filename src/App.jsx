@@ -6,13 +6,23 @@ import BlurText from "./components/BlurText";
 import CircularGallery from "./components/CircularGallery";
 
 function App() {
-
   const technologyImages = [
     { image: "/technology-images/golang.png", text: "Golang" },
     { image: "/technology-images/react.png", text: "React" },
     { image: "/technology-images/next.png", text: "Next" },
     { image: "/technology-images/express.png", text: "Express" },
     { image: "/technology-images/arduino.jpg", text: "Arduino" },
+    { image: "/technology-images/platformio.png", text: "Platform IO" },
+    { image: "/technology-images/mysql.png", text: "MySQL" },
+    { image: "/technology-images/cpp.png", text: "C++" },
+    { image: "/technology-images/laravel.png", text: "Laravel" },
+    { image: "/technology-images/postgres.png", text: "Postgre SQL" },
+    { image: "/technology-images/mongodb.png", text: "Mongo DB" },
+    { image: "/technology-images/influxdb.png", text: "Influx DB" },
+    { image: "/technology-images/nodered.png", text: "Node-RED" },
+    { image: "/technology-images/nginx.png", text: "NGINX" },
+    { image: "/technology-images/gcp.png", text: "Google Cloud Platform" },
+    { image: "/technology-images/docker.png", text: "Docker" },
   ];
 
   return (
@@ -120,7 +130,7 @@ function App() {
           {/* TECHNOLOGIES Text */}
           <div
             id="technology-header"
-            className="relative text-white font-bold z-10"
+            className="relative text-white font-bold z-10 flex flex-col items-center text-center w-full"
           >
             <BlurText
               text="TECHNOLOGIES"
@@ -128,6 +138,13 @@ function App() {
               animateBy="words"
               direction="top"
               className="text-xl sm:text-3xl md:text-5xl"
+            />
+            <BlurText
+              text="i've been learning about"
+              delay={150}
+              animateBy="words"
+              direction="top"
+              className="text-md sm:text-xl md:text-3xl"
             />
           </div>
         </div>
@@ -138,8 +155,13 @@ function App() {
         id="technologies-section"
         className="items-center justify-center min-h-screen overflow-visible w-full h-[100px]"
       >
-        <div style={{ height: "600px", position: "relative" }}>
-          <CircularGallery bend={0} items={technologyImages} textColor="#ffffff" borderRadius={0.05} />
+        <div style={{ height: "400px", position: "relative" }}>
+          <CircularGallery
+            bend={0}
+            items={technologyImages}
+            textColor="#ffffff"
+            borderRadius={0.05}
+          />
         </div>
       </div>
     </div>

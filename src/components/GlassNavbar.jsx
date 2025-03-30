@@ -7,7 +7,7 @@ export default function GlassNavbar() {
 
   return (
     <div className="relative">
-      <nav className="fixed top-0 left-0 w-full bg-white/10 backdrop-blur-md shadow-lg p-2 md:p-10 font-sans font-bold z-50 overflow-hidden">
+      <nav className="fixed top-0 left-0 w-full bg-white/10 backdrop-blur-md shadow-lg p-2 md:p-5 font-sans font-bold z-50 overflow-hidden">
         {/* Aurora inside nav */}
         <div className="absolute inset-0 -z-10">
           <Aurora
