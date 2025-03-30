@@ -1,16 +1,27 @@
 import React from "react";
-import GlassNavbar from "./components/GlassNavbar";
 import ScrollVelocity from "./components/ScrollVelocity";
-import Aurora from "./components/Aurora";
 import PixelTransition from "./components/PixelTransition";
 import Waves from "./components/Waves";
 import BlurText from "./components/BlurText";
+import CircularGallery from "./components/CircularGallery";
 
 function App() {
+
+  const technologyImages = [
+    { image: "/technology-images/golang.png", text: "Golang" },
+    { image: "/technology-images/react.png", text: "React" },
+    { image: "/technology-images/next.png", text: "Next" },
+    { image: "/technology-images/express.png", text: "Express" },
+    { image: "/technology-images/arduino.jpg", text: "Arduino" },
+  ];
+
   return (
     <div>
       {/* Scroll Text and Profile */}
-      <div id="home" className="h-screen flex flex-col justify-center items-center overflow-hidden">
+      <div
+        id="home"
+        className="h-screen flex flex-col justify-center items-center overflow-hidden"
+      >
         <div className="h-20 flex items-center justify-center mt-16 md:mt-20">
           <ScrollVelocity
             texts={[
@@ -84,13 +95,12 @@ function App() {
         </div>
       </div>
 
-      {/* Next Section (Appears After Scrolling) */}
+      {/* Technologies header */}
       <div
         id="technologies-section"
         className="flex flex-col items-center justify-center min-h-screen"
       >
         <div className="relative flex flex-col items-center justify-center w-full">
-          {/* Full-width Waves positioned behind the text */}
           <div className="absolute top-1/2 left-0 w-full h-44 -translate-y-1/2 pointer-events-none">
             <Waves
               lineColor="#00D8FF"
@@ -120,6 +130,16 @@ function App() {
               className="text-xl sm:text-3xl md:text-5xl"
             />
           </div>
+        </div>
+      </div>
+
+      {/* Technologies content */}
+      <div
+        id="technologies-section"
+        className="items-center justify-center min-h-screen overflow-visible w-full h-[100px]"
+      >
+        <div style={{ height: "600px", position: "relative" }}>
+          <CircularGallery bend={0} items={technologyImages} textColor="#ffffff" borderRadius={0.05} />
         </div>
       </div>
     </div>
