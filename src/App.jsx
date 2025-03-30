@@ -8,37 +8,28 @@ import BlurText from "./components/BlurText";
 
 function App() {
   return (
-    <div className="relative">
-      <Aurora
-        colorStops={["#00D8FF", "#FFFFFF", "#00D8FF"]}
-        blend={0.5}
-        amplitude={1.0}
-        speed={1}
-      />
+    <div>
+      {/* Scroll Text and Profile */}
+      <div id="home" className="h-screen flex flex-col justify-center items-center overflow-hidden">
+        <div className="h-20 flex items-center justify-center mt-16 md:mt-20">
+          <ScrollVelocity
+            texts={[
+              "Software Engineering Cloud Computing",
+              "Machine Learning Internet of Things",
+            ]}
+            velocity={50}
+            className="custom-scroll-text"
+          />
+        </div>
 
-      {/* Navbar */}
-      <GlassNavbar />
-
-      {/* Content Wrapper */}
-      <div className="pt-16 min-h-screen z-0">
-        <ScrollVelocity
-          texts={[
-            "Software Engineering Cloud Computing",
-            "Machine Learning Internet of Things",
-          ]}
-          velocity={50}
-          className="custom-scroll-text"
-        />
-
-        {/* Profile Section */}
         <div
           id="profile-section"
-          className="flex flex-col md:flex-row items-center justify-center gap-6 p-6 pt-16"
+          className="flex flex-col md:flex-row items-center justify-center gap-6 mt-8 md:mt-16"
         >
           {/* Text */}
           <div
             id="introduction"
-            className="text-center md:text-justify max-w-lg"
+            className="text-center md:text-justify max-w-lg px-4 md:px-0"
           >
             Hi everyone! My name is <strong>Hoga Cavan Afrinata</strong>, but
             you can simply call me Hoga. I'm a computer engineering graduate
@@ -46,6 +37,7 @@ function App() {
             computers.
           </div>
 
+          {/* Profile Picture */}
           <div
             id="profile-picture"
             className="w-48 h-48 bg-gray-300 rounded-full flex items-center justify-center"
@@ -55,7 +47,11 @@ function App() {
                 <img
                   src="1x1.jpg"
                   alt="this is hoga"
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
                 />
               }
               secondContent={
@@ -86,45 +82,43 @@ function App() {
             />
           </div>
         </div>
+      </div>
 
-        <div
-          id="technologies-section"
-          className="flex flex-col items-center justify-center mt-16"
-        >
+      {/* Next Section (Appears After Scrolling) */}
+      <div
+        id="technologies-section"
+        className="flex flex-col items-center justify-center min-h-screen"
+      >
+        <div className="relative flex flex-col items-center justify-center w-full">
+          {/* Full-width Waves positioned behind the text */}
+          <div className="absolute top-1/2 left-0 w-full h-44 -translate-y-1/2 pointer-events-none">
+            <Waves
+              lineColor="#00D8FF"
+              backgroundColor="rgba(255, 255, 255, 0)"
+              waveSpeedX={0.02}
+              waveSpeedY={0.01}
+              waveAmpX={40}
+              waveAmpY={20}
+              friction={0.9}
+              tension={0.01}
+              maxCursorMove={120}
+              xGap={12}
+              yGap={36}
+            />
+          </div>
+
+          {/* TECHNOLOGIES Text */}
           <div
-            id="technologies-section"
-            className="relative flex flex-col items-center justify-center mt-16 w-full"
+            id="technology-header"
+            className="relative text-white font-bold z-10"
           >
-            {/* Full-width Waves positioned behind the text */}
-            <div className="absolute top-1/2 left-0 w-full h-44 -translate-y-1/2 pointer-events-none">
-              <Waves
-                lineColor="#00D8FF"
-                backgroundColor="rgba(255, 255, 255, 0)"
-                waveSpeedX={0.02}
-                waveSpeedY={0.01}
-                waveAmpX={40}
-                waveAmpY={20}
-                friction={0.9}
-                tension={0.01}
-                maxCursorMove={120}
-                xGap={12}
-                yGap={36}
-              />
-            </div>
-
-            {/* TECHNOLOGIES Text */}
-            <div
-              id="technology-header"
-              className="relative text-white text-5xl font-bold z-10"
-            >
-              <BlurText
-                text="TECHNOLOGIES"
-                delay={150}
-                animateBy="words"
-                direction="top"
-                className="text-5xl"
-              />
-            </div>
+            <BlurText
+              text="TECHNOLOGIES"
+              delay={150}
+              animateBy="words"
+              direction="top"
+              className="text-xl sm:text-3xl md:text-5xl"
+            />
           </div>
         </div>
       </div>
