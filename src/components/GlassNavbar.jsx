@@ -6,11 +6,11 @@ export default function GlassNavbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white/10 backdrop-blur-md shadow-lg p-10 font-sans font-bold">
+    <nav className="fixed top-0 left-0 w-full bg-white/10 backdrop-blur-md shadow-lg p-10 font-sans font-bold z-50">
       <div className="max-w-5xl mx-auto flex justify-between items-center">
         <h1 className="text-white text-lg font-bold">
           <GradientText
-            colors={["#00D8FF", "#7CFF67", "#00D8FF", "#7CFF67", "#00D8FF"]}
+            colors={["#00D8FF", "#FFFFFF","#00D8FF", "#FFFFFF","#00D8FF", "#FFFFFF"]}
             animationSpeed={3}
             showBorder={false}
             className="custom-class p-2 text-3xl"
