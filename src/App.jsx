@@ -6,14 +6,15 @@ import BlurText from "./components/BlurText";
 import CircularGallery from "./components/CircularGallery";
 import Hyperspeed from "./components/Hyperspeed";
 import { useState, useEffect } from "react";
+import InfiniteMenu from "./components/InfiniteMenu";
 
 function App() {
   const [key, setKey] = useState(0);
 
-  // 🔥 Force re-render after mount to fix positioning issue
   useEffect(() => {
     setKey((prevKey) => prevKey + 1);
   }, []);
+
   const technologyImages = [
     { image: "/technology-images/golang.png", text: "Golang" },
     { image: "/technology-images/react.png", text: "React" },
@@ -31,6 +32,40 @@ function App() {
     { image: "/technology-images/nginx.png", text: "NGINX" },
     { image: "/technology-images/gcp.png", text: "Google Cloud Platform" },
     { image: "/technology-images/docker.png", text: "Docker" },
+  ];
+
+  const projectItems = [
+    {
+      image: "/project-images/ebii-sphere.png",
+      link: "https://github.com/heronhoga",
+      title: "EBII",
+      description: "IoT Device Monitoring Web Application",
+    },
+    {
+      image: "/project-images/hexa-sphere.png",
+      link: "https://hexasystem.my.id/",
+      title: "Hexa",
+      description: "Transportation Management System Web Application",
+    },
+    {
+      image: "/project-images/hijaiyah-sphere.png",
+      link: "https://github.com/heronhoga/hijaiyah",
+      title: "Hijaiyah",
+      description:
+        "Computer Vision-Assisted Arabic Letter Learning Mobile Application",
+    },
+    {
+      image: "/project-images/sewain-sphere.png",
+      link: "https://github.com/heronhoga/sewain",
+      title: "Sewain",
+      description: "Academic Equipment Rental Web Application",
+    },
+    {
+      image: "/project-images/woai-sphere.png",
+      link: "https://github.com/heronhoga/woai-api",
+      title: "WOAI",
+      description: "AI-Assisted Workout Mobile Application",
+    },
   ];
 
   return (
@@ -201,6 +236,13 @@ function App() {
             direction="top"
             className="text-md sm:text-xl md:text-3xl"
           />
+        </div>
+      </div>
+
+      {/* Projects content */}
+      <div id="projects-section" className="min-h-screen h-[100dvh]">
+        <div className="h-full relative">
+          <InfiniteMenu items={projectItems} />
         </div>
       </div>
     </div>

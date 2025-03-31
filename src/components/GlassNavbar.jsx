@@ -7,7 +7,7 @@ export default function GlassNavbar() {
 
   return (
     <div className="relative">
-      <nav className="fixed top-0 left-0 w-full bg-white/10 backdrop-blur-md shadow-lg p-2 md:p-5 font-sans font-bold z-50 overflow-hidden">
+      <nav className="fixed top-0 left-0 w-full bg-white/10 backdrop-blur-md shadow-lg p-2 md:p-4 font-sans font-bold z-50 overflow-hidden">
         {/* Aurora inside nav */}
         <div className="absolute inset-0 -z-10">
           <Aurora
@@ -32,7 +32,7 @@ export default function GlassNavbar() {
           </h1>
 
           {/* Desktop Menu */}
-          <ul className="hidden md:flex space-x-6 text-white text-2xl">
+          <ul className="hidden md:flex space-x-5 text-white text-2xl">
             <li className="hover:text-gray-300 cursor-pointer"><a href="#home">Home</a></li>
             <li className="hover:text-gray-300 cursor-pointer"><a href="#technologies-section">Technologies</a></li>
             <li className="hover:text-gray-300 cursor-pointer"><a href="#projects-section">Projects Showcase</a></li>
