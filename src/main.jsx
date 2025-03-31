@@ -5,8 +5,10 @@ import App from './App.jsx'
 import GlassNavbar from './components/GlassNavbar.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  // <StrictMode>
+    <>
     <GlassNavbar/>
     <App />
-  </StrictMode>,
+    </>
+  // </StrictMode>,
 )

@@ -4,8 +4,16 @@ import PixelTransition from "./components/PixelTransition";
 import Waves from "./components/Waves";
 import BlurText from "./components/BlurText";
 import CircularGallery from "./components/CircularGallery";
+import Hyperspeed from "./components/Hyperspeed";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [key, setKey] = useState(0);
+
+  // 🔥 Force re-render after mount to fix positioning issue
+  useEffect(() => {
+    setKey((prevKey) => prevKey + 1);
+  }, []);
   const technologyImages = [
     { image: "/technology-images/golang.png", text: "Golang" },
     { image: "/technology-images/react.png", text: "React" },
@@ -140,7 +148,7 @@ function App() {
               className="text-xl sm:text-3xl md:text-5xl"
             />
             <BlurText
-              text="i've been learning about"
+              text="i've been learning"
               delay={150}
               animateBy="words"
               direction="top"
@@ -161,6 +169,37 @@ function App() {
             items={technologyImages}
             textColor="#ffffff"
             borderRadius={0.05}
+          />
+        </div>
+      </div>
+
+      {/* Projects header */}
+      <div
+        id="projects-section"
+        className="relative flex flex-col items-center justify-center min-h-screen w-full overflow-hidden bg-black"
+      >
+        <div className="absolute inset-0 w-full h-full" key={key}>
+          <Hyperspeed />
+        </div>
+
+        {/* Text on Top */}
+        <div
+          id="projects-header"
+          className="relative text-white font-bold z-10 flex flex-col items-center text-center"
+        >
+          <BlurText
+            text="PROJECTS"
+            delay={150}
+            animateBy="words"
+            direction="top"
+            className="text-xl sm:text-3xl md:text-5xl"
+          />
+          <BlurText
+            text="i've done"
+            delay={150}
+            animateBy="words"
+            direction="top"
+            className="text-md sm:text-xl md:text-3xl"
           />
         </div>
       </div>

@@ -32,9 +32,10 @@ export default function GlassNavbar() {
           </h1>
 
           {/* Desktop Menu */}
-          <ul className="hidden md:flex space-x-6 text-white text-3xl">
+          <ul className="hidden md:flex space-x-6 text-white text-2xl">
             <li className="hover:text-gray-300 cursor-pointer"><a href="#home">Home</a></li>
             <li className="hover:text-gray-300 cursor-pointer"><a href="#technologies-section">Technologies</a></li>
+            <li className="hover:text-gray-300 cursor-pointer"><a href="#projects-section">Projects Showcase</a></li>
             <li className="hover:text-gray-300 cursor-pointer">Contact</li>
           </ul>
 
