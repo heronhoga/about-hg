@@ -8,6 +8,8 @@ import Hyperspeed from "./components/Hyperspeed";
 import { useState, useEffect } from "react";
 import InfiniteMenu from "./components/InfiniteMenu";
 import MagnetLines from "./components/MagnetLines";
+import { Mails, Instagram, Linkedin, Github } from "lucide-react";
+import GlassIcons from "./components/GlassIcons";
 
 function App() {
   const [key, setKey] = useState(0);
@@ -16,6 +18,7 @@ function App() {
     setKey((prevKey) => prevKey + 1);
   }, []);
 
+  //list of technologies
   const technologyImages = [
     { image: "/technology-images/golang.png", text: "Golang" },
     { image: "/technology-images/react.png", text: "React" },
@@ -35,6 +38,7 @@ function App() {
     { image: "/technology-images/docker.png", text: "Docker" },
   ];
 
+  //list of projects
   const projectItems = [
     {
       image: "/project-images/ebii-sphere.png",
@@ -67,6 +71,14 @@ function App() {
       title: "WOAI",
       description: "AI-Assisted Workout Mobile Application",
     },
+  ];
+
+  //list of social media
+  const socialMedia = [
+    { icon: <Mails />, color: "blue", label: "afrinata34@gmail.com" },
+    { icon: <Linkedin />, color: "blue", label: "LinkedIn", ref: "https://www.linkedin.com/in/afrinata/" },
+    { icon: <Github />, color: "blue", label: "GitHub", ref: "https://github.com/heronhoga" },
+    { icon: <Instagram />, color: "blue", label: "Instagram", ref: "https://www.instagram.com/afrinataaa/" },
   ];
 
   return (
@@ -247,6 +259,7 @@ function App() {
         </div>
       </div>
 
+      {/* Projects header */}
       <div
         id="contacts-header"
         className="min-h-screen h-[100dvh] flex items-center justify-center relative"
@@ -269,6 +282,14 @@ function App() {
           direction="top"
           className="text-xl sm:text-3xl md:text-5xl absolute text-center font-bold"
         />
+      </div>
+
+      {/* Projects content */}
+      <div
+        id="contacts-section"
+        className="min-h-screen h-[100dvh] flex items-center justify-center relative"
+      >
+        <GlassIcons items={socialMedia} className="custom-class" />
       </div>
     </div>
   );
