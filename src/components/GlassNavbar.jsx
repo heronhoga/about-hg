@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import GradientText from "./GradientText";
 import Aurora from "./Aurora";
+
 export default function GlassNavbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -63,9 +64,13 @@ export default function GlassNavbar() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <ul className="md:hidden flex flex-col bg-white/20 backdrop-blur-lg p-4 mt-2 space-y-4 rounded-lg text-white">
+        {/* Mobile Menu with Transition */}
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isOpen ? "max-h-[200px] opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <ul className="flex flex-col p-4 mt-2 space-y-4 rounded-lg text-white">
             <li className="hover:text-gray-300 cursor-pointer">
               <a href="#home">Home</a>
             </li>
@@ -79,7 +84,7 @@ export default function GlassNavbar() {
               <a href="#contacts-header">Contacts</a>
             </li>
           </ul>
-        )}
+        </div>
       </nav>
     </div>
   );
