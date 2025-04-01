@@ -7,6 +7,7 @@ import CircularGallery from "./components/CircularGallery";
 import Hyperspeed from "./components/Hyperspeed";
 import { useState, useEffect } from "react";
 import InfiniteMenu from "./components/InfiniteMenu";
+import MagnetLines from "./components/MagnetLines";
 
 function App() {
   const [key, setKey] = useState(0);
@@ -244,6 +245,30 @@ function App() {
         <div className="h-full relative">
           <InfiniteMenu items={projectItems} />
         </div>
+      </div>
+
+      <div
+        id="contacts-header"
+        className="min-h-screen h-[100dvh] flex items-center justify-center relative"
+      >
+        <div className="absolute inset-0 flex items-center justify-center">
+          <MagnetLines
+            rows={9}
+            columns={9}
+            containerSize="60vmin"
+            lineColor="#00D8FF"
+            lineWidth="0.8vmin"
+            lineHeight="5vmin"
+            baseAngle={0}
+          />
+        </div>
+        <BlurText
+          text="CONTACT ME"
+          delay={150}
+          animateBy="words"
+          direction="top"
+          className="text-xl sm:text-3xl md:text-5xl absolute text-center font-bold"
+        />
       </div>
     </div>
   );
