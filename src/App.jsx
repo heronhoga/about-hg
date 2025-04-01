@@ -211,7 +211,7 @@ function App() {
         id="technologies-section"
         className="items-center justify-center min-h-screen overflow-visible w-full h-[100px]"
       >
-        <div style={{ height: "400px", position: "relative" }}>
+        <div style={{ height: "300px", position: "relative" }}>
           <CircularGallery
             bend={0}
             items={technologyImages}
