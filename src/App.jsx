@@ -71,6 +71,12 @@ function App() {
       title: "WOAI",
       description: "AI-Assisted Workout Mobile Application",
     },
+    {
+      image: "/project-images/bars-sphere.png",
+      link: "https://github.com/heronhoga/bars-fe",
+      title: "BARS",
+      description: "Beats Showcase and Sharing Web Application",
+    },
   ];
 
   //list of social media
